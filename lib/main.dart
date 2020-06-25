@@ -1,17 +1,18 @@
-// import 'dart:async';
-
-// import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
-import 'package:sample/pages/index.dart';
-
-import 'audio.dart';
+import 'package:sample/audio/index.dart';
+import 'package:sample/video/pages/index.dart';
 
 void main() => runApp(MaterialApp(
-      home: Home(),
+      home: MyApp(),
       debugShowCheckedModeBanner: false,
     ));
 
-class Home extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,7 @@ class Home extends StatelessWidget {
               // print('Pressed');
 
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => MyApp()));
+                  .push(MaterialPageRoute(builder: (context) => AudioStream()));
             },
             child: Text('Audio Streaming'),
           )
